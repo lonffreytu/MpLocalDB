@@ -1,7 +1,7 @@
 /**
  * 小程序本地数据库
  * @tutorial https://github.com/jin-yufeng/MpLocalDB
- * @author JinYufeng
+ * @author JinYufeng, Lonffrey Tu
  * @listens MIT
  */
 var localDB, _dirty = false
@@ -58,7 +58,7 @@ Collection.prototype.add = function (data) {
  */
 Collection.prototype.doc = function (id) {
   var data = this.data[id]
-  return {
+  return data ? {
     get: () => {
       var res = JSON.parse(JSON.stringify(data))
       res._id = id
@@ -71,7 +71,7 @@ Collection.prototype.doc = function (id) {
       return true
     },
     remove: () => (this.data[id] = void 0, true)
-  }
+  } : null;
 }
 /**
  * 查询记录

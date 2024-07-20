@@ -1,3 +1,5 @@
+本项目由[MpLocalDB](https://github.com/jin-yufeng/MpLocalDB)而来。因此项目原作者停止更新，但我在使用中发现一些bug，故自己维护了一个库。欢迎大家使用。
+
 # MpLocalDB
 
 > 微信小程序本地数据库
@@ -139,7 +141,11 @@ collection.where(_.or([{
 5. 集合名和一个集合内的 `_id`（可自动生成）**不可重复**，否则将无法创建  
 6. 方法设置参考了云数据库的操作，关于各方法的详细信息可以直接参考 [云数据库的文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/Cloud.database.html)  
 
-## 更新日志 ##
+## 现更新日志 ##
+- 2024.07.20  
+  1. `F` 修复了查询为空值的情况下 `get` 后不能判断返回值不存在的问题  
+
+## 原更新日志 ##
 - 2020.7.9  
   1. `F` 修复了 `remove` 后执行 `where` 可能出错的问题  
 
